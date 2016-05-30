@@ -55,6 +55,9 @@ html, body {
     		left: -20px;
     		width: $width + 40px;
     		height: ($height - 150px) + 40px;
+    		.cover {
+    			background-color: rgba($color, 0);	
+    		}
 		}
 		.cover {
 			border-radius: 10px 10px 0px 0px;
@@ -62,6 +65,7 @@ html, body {
 			height: 100%;
 			position: absolute;
 			background-color: rgba($color, 0.5);	
+			transition: background-color 0.5s;
 		}
 		.name, .website {
 			position: absolute;
