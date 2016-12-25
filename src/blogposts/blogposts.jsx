@@ -77,7 +77,7 @@ class BlogPosts extends Component {
 			}
 		});
 
-		return <section className="section hero is-fullheight blogposts" id="section-blogposts">
+		return <section className="section blogposts" id="section-blogposts">
 
 			<div className="container">
 

@@ -69,11 +69,10 @@ class Navigation extends Component {
 					<ul>
 						<li className={ this.isCurrent('header') ? 'is-active' : ''} onClick={() => this.jumpTo('header')}><a><i className="fa fa-home"></i></a></li>
 						<li className={ this.isCurrent('blogposts') ? 'is-active' : ''} onClick={() => this.jumpTo('blogposts')}><a> <i className="fa fa-newspaper-o"></i> </a></li>
-						<li><a> <i className="fa fa-flask"></i> </a></li>
-						<li><a> <i className="fa fa-gamepad"></i> </a></li>
-						<li><a> <i className="fa fa-github"></i> </a></li>
-						<li><a> <i className="fa fa-linkedin"></i> </a></li>
-						<li><a> <i className="fa fa-facebook"></i> </a></li>
+						<li className={ this.isCurrent('labs') ? 'is-active' : ''} onClick={() => this.jumpTo('labs')}><a> <i className="fa fa-flask"></i> </a></li>
+						<li className={ this.isCurrent('games') ? 'is-active' : ''} onClick={() => this.jumpTo('games')}><a> <i className="fa fa-gamepad"></i> </a></li>
+						<li><a href="https://github.com/afief" target="_blank"> <i className="fa fa-github"></i> </a></li>
+						<li><a href="https://www.linkedin.com/in/afief" target="_blank"> <i className="fa fa-linkedin"></i> </a></li>
 					</ul>
 				</div>
 			</nav>
