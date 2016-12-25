@@ -1,0 +1,54 @@
+@import '../variables.scss';
+
+section.navigation {
+	padding: 0px;
+	min-height: 80px;
+	.tabs {
+		background-color: $primary;
+		padding: 20px;
+		-webkit-transition: padding 0.5s;
+		transition: padding 0.5s;
+		ul {
+			border-bottom: none;
+			li {
+				a {
+					border-radius: 50%;
+					width: 40px;
+					line-height: 40px;
+					display: block;
+					padding: 0px;
+					text-align: center;
+					border: none;
+					color: white;
+					margin: 0px 5px;
+					.fa {
+						line-height: 40px;
+					}
+					&:hover {
+						background-color: transparentize(white, 0.2);
+						color: $primary;
+					}
+				}
+				&.is-active {
+					a {
+						color: $primary;
+					}
+				}
+			}
+		}
+		&.fixed {
+			padding: 0px 10px;
+			position: fixed;
+			width: 100%;
+			left: 0px;
+			top: 0px;
+			ul {
+				li {
+					a {
+						border-radius: 0px;
+					}
+				}
+			}
+		}
+	}
+}
