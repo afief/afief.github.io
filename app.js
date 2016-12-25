@@ -70,6 +70,14 @@
 
 	var _blogposts2 = _interopRequireDefault(_blogposts);
 
+	var _labs = __webpack_require__(193);
+
+	var _labs2 = _interopRequireDefault(_labs);
+
+	var _games = __webpack_require__(196);
+
+	var _games2 = _interopRequireDefault(_games);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -95,7 +103,41 @@
 					{ className: 'main-container' },
 					_react2.default.createElement(_header2.default, null),
 					_react2.default.createElement(_navigation2.default, null),
-					_react2.default.createElement(_blogposts2.default, null)
+					_react2.default.createElement(_blogposts2.default, null),
+					_react2.default.createElement(_labs2.default, null),
+					_react2.default.createElement(_games2.default, null),
+					_react2.default.createElement(
+						'footer',
+						{ className: 'footer' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'container' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'content has-text-centered' },
+								_react2.default.createElement(
+									'p',
+									null,
+									'Crafted by ',
+									_react2.default.createElement(
+										'a',
+										{ href: 'http://afief.net' },
+										'Me'
+									),
+									' with React and Love in Bandung.'
+								),
+								_react2.default.createElement(
+									'p',
+									null,
+									_react2.default.createElement(
+										'a',
+										{ className: 'icon', href: 'https://afief.github.io' },
+										_react2.default.createElement('i', { className: 'fa fa-github' })
+									)
+								)
+							)
+						)
+					)
 				);
 			}
 		}]);
@@ -22125,7 +22167,9 @@
 								),
 								_react2.default.createElement(
 									'li',
-									null,
+									{ className: this.isCurrent('labs') ? 'is-active' : '', onClick: function onClick() {
+											return _this2.jumpTo('labs');
+										} },
 									_react2.default.createElement(
 										'a',
 										null,
@@ -22136,7 +22180,9 @@
 								),
 								_react2.default.createElement(
 									'li',
-									null,
+									{ className: this.isCurrent('games') ? 'is-active' : '', onClick: function onClick() {
+											return _this2.jumpTo('games');
+										} },
 									_react2.default.createElement(
 										'a',
 										null,
@@ -22150,7 +22196,7 @@
 									null,
 									_react2.default.createElement(
 										'a',
-										null,
+										{ href: 'https://github.com/afief', target: '_blank' },
 										' ',
 										_react2.default.createElement('i', { className: 'fa fa-github' }),
 										' '
@@ -22161,20 +22207,9 @@
 									null,
 									_react2.default.createElement(
 										'a',
-										null,
+										{ href: 'https://www.linkedin.com/in/afief', target: '_blank' },
 										' ',
 										_react2.default.createElement('i', { className: 'fa fa-linkedin' }),
-										' '
-									)
-								),
-								_react2.default.createElement(
-									'li',
-									null,
-									_react2.default.createElement(
-										'a',
-										null,
-										' ',
-										_react2.default.createElement('i', { className: 'fa fa-facebook' }),
 										' '
 									)
 								)
@@ -22225,7 +22260,7 @@
 
 
 	// module
-	exports.push([module.id, "section.navigation {\n  padding: 0px;\n  min-height: 80px; }\n  section.navigation .tabs {\n    background-color: #3e768e;\n    padding: 20px;\n    -webkit-transition: padding 0.5s;\n    transition: padding 0.5s; }\n    section.navigation .tabs ul {\n      border-bottom: none; }\n      section.navigation .tabs ul li a {\n        border-radius: 50%;\n        width: 40px;\n        line-height: 40px;\n        display: block;\n        padding: 0px;\n        text-align: center;\n        border: none;\n        color: white;\n        margin: 0px 5px; }\n        section.navigation .tabs ul li a .fa {\n          line-height: 40px; }\n        section.navigation .tabs ul li a:hover {\n          background-color: rgba(255, 255, 255, 0.8);\n          color: #3e768e; }\n      section.navigation .tabs ul li.is-active a {\n        color: #3e768e; }\n    section.navigation .tabs.fixed {\n      padding: 0px 10px;\n      position: fixed;\n      width: 100%;\n      left: 0px;\n      top: 0px; }\n      section.navigation .tabs.fixed ul li a {\n        border-radius: 0px; }\n", ""]);
+	exports.push([module.id, "section.navigation {\n  padding: 0px;\n  min-height: 80px; }\n  section.navigation .tabs {\n    background-color: #3e768e;\n    padding: 20px;\n    -webkit-transition: padding 0.5s;\n    transition: padding 0.5s; }\n    section.navigation .tabs ul {\n      border-bottom: none; }\n      section.navigation .tabs ul li a {\n        border-radius: 50%;\n        width: 40px;\n        line-height: 40px;\n        display: block;\n        padding: 0px;\n        text-align: center;\n        border: none;\n        color: white;\n        margin: 0px 5px; }\n        section.navigation .tabs ul li a .fa {\n          line-height: 40px; }\n        section.navigation .tabs ul li a:hover {\n          background-color: rgba(255, 255, 255, 0.8);\n          color: #3e768e; }\n      section.navigation .tabs ul li.is-active a {\n        color: #3e768e; }\n    section.navigation .tabs.fixed {\n      padding: 0px 10px;\n      position: fixed;\n      width: 100%;\n      left: 0px;\n      top: 0px;\n      z-index: 10000; }\n      section.navigation .tabs.fixed ul li a {\n        border-radius: 0px; }\n", ""]);
 
 	// exports
 
@@ -22373,7 +22408,7 @@
 
 				return _react2.default.createElement(
 					'section',
-					{ className: 'section hero is-fullheight blogposts', id: 'section-blogposts' },
+					{ className: 'section blogposts', id: 'section-blogposts' },
 					_react2.default.createElement(
 						'div',
 						{ className: 'container' },
@@ -22442,6 +22477,448 @@
 
 	// module
 	exports.push([module.id, "section.blogposts {\n  padding-top: 60px; }\n  section.blogposts .box .media figure {\n    background-position: center center;\n    background-size: cover; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 193 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(194);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Labs = function (_Component) {
+		_inherits(Labs, _Component);
+
+		function Labs(props) {
+			_classCallCheck(this, Labs);
+
+			return _possibleConstructorReturn(this, (Labs.__proto__ || Object.getPrototypeOf(Labs)).call(this, props));
+		}
+
+		_createClass(Labs, [{
+			key: 'render',
+			value: function render() {
+
+				return _react2.default.createElement(
+					'section',
+					{ className: 'section labs', id: 'section-labs' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'container' },
+						_react2.default.createElement(
+							'h1',
+							{ className: 'title' },
+							'Some Boiling Codes'
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'columns' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'column' },
+								_react2.default.createElement(
+									'div',
+									{ className: 'box' },
+									_react2.default.createElement(
+										'article',
+										{ className: 'media' },
+										_react2.default.createElement(
+											'div',
+											{ className: 'media-left' },
+											_react2.default.createElement('figure', { className: 'image is-64x64', style: { 'backgroundImage': 'url(http://afief.github.io/rc-sc/thumbnail.png)' } })
+										),
+										_react2.default.createElement(
+											'div',
+											{ className: 'media-content' },
+											_react2.default.createElement(
+												'div',
+												{ className: 'content' },
+												_react2.default.createElement(
+													'p',
+													null,
+													_react2.default.createElement(
+														'strong',
+														null,
+														'React Soundcloud'
+													),
+													' ',
+													_react2.default.createElement(
+														'small',
+														null,
+														'December 2016'
+													),
+													_react2.default.createElement('br', null),
+													'Kombinasi dari performance react yang super kenceng, ditambah API Soundcloud yang super open.'
+												)
+											),
+											_react2.default.createElement(
+												'nav',
+												{ className: 'level' },
+												_react2.default.createElement(
+													'div',
+													{ className: 'level-left' },
+													_react2.default.createElement(
+														'a',
+														{ className: 'level-item', href: 'rc-sc/index.html', target: '_blank' },
+														'Open'
+													),
+													_react2.default.createElement(
+														'a',
+														{ href: 'https://github.com/afief/react-soundcloud', target: '_blank', className: 'level-item' },
+														'View Codes'
+													)
+												)
+											)
+										)
+									)
+								)
+							),
+							_react2.default.createElement(
+								'div',
+								{ className: 'column' },
+								_react2.default.createElement(
+									'div',
+									{ className: 'box' },
+									_react2.default.createElement(
+										'article',
+										{ className: 'media' },
+										_react2.default.createElement(
+											'div',
+											{ className: 'media-left' },
+											_react2.default.createElement('figure', { className: 'image is-64x64', style: { 'backgroundImage': 'url(http://perpustakaansd.labschool.upi.edu/template/default/img/pattern.png)' } })
+										),
+										_react2.default.createElement(
+											'div',
+											{ className: 'media-content' },
+											_react2.default.createElement(
+												'div',
+												{ className: 'content' },
+												_react2.default.createElement(
+													'p',
+													null,
+													_react2.default.createElement(
+														'strong',
+														null,
+														'React Soundcloud'
+													),
+													' ',
+													_react2.default.createElement(
+														'small',
+														null,
+														'December 2016'
+													),
+													_react2.default.createElement('br', null),
+													'Custom-Made API untuk ',
+													_react2.default.createElement(
+														'a',
+														{ href: 'http://slims.web.id', target: '_blank' },
+														'SLIMS'
+													),
+													' agar data katalog buku dapat dikonsumsi aplikasi ',
+													_react2.default.createElement(
+														'a',
+														{ href: 'https://play.google.com/store/apps/details?id=com.hibahdikti.digitallibrary', target: '_blank' },
+														'Mobile Perpustakaan'
+													),
+													'.'
+												)
+											),
+											_react2.default.createElement(
+												'nav',
+												{ className: 'level' },
+												_react2.default.createElement(
+													'div',
+													{ className: 'level-left' },
+													_react2.default.createElement(
+														'a',
+														{ href: 'https://github.com/afief/slims-api', target: '_blank', className: 'level-item' },
+														'View Codes'
+													)
+												)
+											)
+										)
+									)
+								)
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return Labs;
+	}(_react.Component);
+
+	exports.default = Labs;
+
+/***/ },
+/* 194 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(195);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(181)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./labs.scss", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./labs.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 195 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(180)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "section.labs {\n  padding-top: 60px; }\n  section.labs .box .media figure {\n    background-position: center center;\n    background-size: cover; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 196 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(197);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Games = function (_Component) {
+		_inherits(Games, _Component);
+
+		function Games(props) {
+			_classCallCheck(this, Games);
+
+			var _this = _possibleConstructorReturn(this, (Games.__proto__ || Object.getPrototypeOf(Games)).call(this, props));
+
+			_this.posts = [{
+				title: "Prince Bunny",
+				thumbnail: "http://afief.net/play/images/bunny.png",
+				excerpt: "Prince Bunny adalah platformer game yang mengajak pemain untuk terus melompat lebih tinggi dan menghindari rintangan. Prince Bunny menggunakan accelerometer apabila dimainkan di device mobile. Dan menggunakan tombol panah kanan dan kiri apabila dimainkan di komputer.",
+				date: "",
+				url: "http://afief.net/play/bunny"
+			}, {
+				title: "THE ANCIENT LINES",
+				thumbnail: "http://afief.net/play/images/ancientlines.png",
+				excerpt: "The Ancient Lines adalah puzzle game terinspirasi dari banyak puzzle games yang sudah ada sebelumnya. Game ini memberikan tantangan tersendiri ketika development dengan bagaimana membuat bentuk garis 'pseudo' random yang masih tetap terlihat menarik.",
+				date: "",
+				url: "http://afief.net/play/ancientlines"
+			}, {
+				title: "SQUAREZOO",
+				thumbnail: "http://afief.net/play/images/squarezoo.png",
+				excerpt: "Squarezoo dibuat di Platform Android. Mengajak anak-anak untuk dapat mengenal binatang lebih dekat. Setiap menyelesaikan 5 level, pemain akan meng-unlock hewan baru yang memuat keterangan mengenai hewan tersebut. Selain mengajak anak-anak untuk bermain, game ini diharapkan juga bisa mengedukasi mereka. :)",
+				date: "",
+				url: "https://play.google.com/store/apps/details?id=air.sinaulin.squarezoo"
+			}, {
+				title: "DUCK DI DORR",
+				thumbnail: "http://afief.net/play/images/duck.png",
+				excerpt: "Duck Di Dorr adalah projek pertama yang dibuat dengan menggunakan aset dari Kenney. Game ini dibuat dengan HTML5 diwaktu senggang. Dengan menggunakan Intel Realsense Camera, game ini dapat dimainkan hanya dengan mengarahkan senjata menggunakan jari di depan kamera.",
+				date: "",
+				url: "http://afief.net/play/duck"
+			}, {
+				title: "TAPPY PLANE",
+				thumbnail: "http://afief.net/play/images/tappy.png",
+				excerpt: "Sama dengan Duck Di Dorr, game ini dikerjakan diwaktu senggang. Gameplaynya mirip dengan Flappy Bird, hanya saja ini adalah pesawat. Game ini dibuat dengan menggunakan PhaserJS.",
+				date: "",
+				url: "http://afief.net/play/tappy"
+			}];
+			return _this;
+		}
+
+		_createClass(Games, [{
+			key: 'render',
+			value: function render() {
+				var pels = this.posts.map(function (val, i) {
+					return _react2.default.createElement(
+						'div',
+						{ className: 'box', key: i },
+						_react2.default.createElement(
+							'article',
+							{ className: 'media' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'media-left' },
+								_react2.default.createElement('figure', { className: 'image is-64x64', style: { 'backgroundImage': 'url(' + val.thumbnail + ')' } })
+							),
+							_react2.default.createElement(
+								'div',
+								{ className: 'media-content' },
+								_react2.default.createElement(
+									'div',
+									{ className: 'content' },
+									_react2.default.createElement(
+										'p',
+										null,
+										_react2.default.createElement(
+											'strong',
+											null,
+											val.title
+										),
+										' ',
+										_react2.default.createElement(
+											'small',
+											null,
+											val.date
+										),
+										_react2.default.createElement('br', null),
+										val.excerpt
+									)
+								),
+								_react2.default.createElement(
+									'nav',
+									{ className: 'level' },
+									_react2.default.createElement(
+										'div',
+										{ className: 'level-left' },
+										_react2.default.createElement(
+											'a',
+											{ className: 'level-item', href: val.url, target: '_blank' },
+											_react2.default.createElement('i', { className: 'fa fa-gamepad' }),
+											' \xA0 Play'
+										)
+									)
+								)
+							)
+						)
+					);
+				});
+				var leftColumns = [];
+				var rightColumns = [];
+				pels.forEach(function (el, i) {
+					if (i % 2 == 0) {
+						/* genap, kiri */
+						leftColumns.push(el);
+					} else {
+						rightColumns.push(el);
+					}
+				});
+
+				return _react2.default.createElement(
+					'section',
+					{ className: 'section games', id: 'section-games' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'container' },
+						_react2.default.createElement(
+							'h1',
+							{ className: 'title' },
+							'Games'
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'columns' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'column' },
+								leftColumns
+							),
+							_react2.default.createElement(
+								'div',
+								{ className: 'column' },
+								rightColumns
+							)
+						)
+					)
+				);
+			}
+		}]);
+
+		return Games;
+	}(_react.Component);
+
+	exports.default = Games;
+
+/***/ },
+/* 197 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(198);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(181)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./games.scss", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./games.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 198 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(180)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "section.games {\n  padding-top: 60px; }\n  section.games .box .media figure {\n    background-position: center center;\n    background-size: cover; }\n", ""]);
 
 	// exports
 
