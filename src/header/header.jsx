@@ -16,7 +16,7 @@ class Header extends Component {
 						Afief Yona Ramadhana
 					</h1>
 					<h2 className="subtitle">
-						Web & Mobile Developer
+						Web & Mobile App Developer
 					</h2>
 				</div>
 			</div>
