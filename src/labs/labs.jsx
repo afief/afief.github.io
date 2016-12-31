@@ -34,7 +34,7 @@ class Labs extends Component {
 									</div>
 									<nav className="level">
 										<div className="level-left">
-											<a className="level-item" href="rc-sc/index.html" target="_blank">
+											<a className="level-item" href="http://afief.github.io/react-soundcloud" target="_blank">
 												Open
 											</a>
 											<a href="https://github.com/afief/react-soundcloud" target="_blank" className="level-item">
@@ -59,7 +59,7 @@ class Labs extends Component {
 								<div className="media-content">
 									<div className="content">
 										<p>
-											<strong>React Soundcloud</strong> <small>December 2016</small>
+											<strong>SLIMs API</strong> <small>October 2016</small>
 											<br/>
 											Custom-Made API untuk <a href="http://slims.web.id" target="_blank">SLIMS</a> agar data katalog buku dapat dikonsumsi aplikasi <a href="https://play.google.com/store/apps/details?id=com.hibahdikti.digitallibrary" target="_blank">Mobile Perpustakaan</a>.
 										</p>
